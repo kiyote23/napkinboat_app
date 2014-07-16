@@ -9,4 +9,21 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-NapkinboatApp::Application.config.secret_key_base = 'f11dced64c7ee7f00ab9acbfee54f11d0ba2f1e5cc03df06c1c80ffe3d3835a0798ca5ddd09c6ad51331d4b224e0142b30ef0db48c2ce73f366cbb54a7a402a8'
+
+# code from railstutorial.org
+require 'securerandom'
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist?(token_file)
+		# Use the existing token.
+		File.read(token_file).chomp
+	else
+		# Generate a new token and store it in token_file
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end
+
+NapkinboatApp::Application.config.secret_key_base = secure_token

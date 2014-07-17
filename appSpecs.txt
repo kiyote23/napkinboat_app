@@ -1,0 +1,16 @@
+Users:
+	Name:
+	Email:
+	admin?:
+	
+Users can sign in, edit profile, post messages, read messages, and delete themselves
+Admin can delete all users but themselves, and delete messages
+
+Pages:
+	Sign in page
+	Profile page
+	Users page
+	Messages page
+	Compose message page
+	About page
+	Help page

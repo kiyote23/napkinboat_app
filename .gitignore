@@ -24,3 +24,4 @@ database.yml
 .idea
 .secret
 *.numbers/*
+*.key*

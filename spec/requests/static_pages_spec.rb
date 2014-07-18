@@ -4,9 +4,9 @@ describe "StaticPages" do
   
   describe "Home page" do
   
-  	it "should have the content 'Napkinboat App'" do
+  	it "should have the content 'NapkinBoat'" do
   		visit '/static_pages/home'
-  		expect(page).to have_content('Napkinboat App')
+  		expect(page).to have_content('NapkinBoat')
   	end
   end
   

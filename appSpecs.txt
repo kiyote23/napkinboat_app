@@ -14,3 +14,10 @@ Pages:
 	Compose message page
 	About page
 	Help page
+	
+Napkin boat
+-add admin to user model
+-create admin user in db
+-create make user pages for admin
+-receive emails at list address
+-only accept email from addresses in list

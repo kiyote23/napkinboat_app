@@ -25,3 +25,4 @@ database.yml
 .secret
 *.numbers/*
 *.key*
+appSpecs.txt

@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require "rubygems"
+require "bundler/setup"
+require "mailman"
+
+Mailman::Application.run do
+	default do
+		# Mail::Message -- check docs on this
+		puts "Received #{message.subject}"
+	   	Message.receive_mail(message)
+		# Message.create! sender_email: message.from.first, content: message.body.decoded
+	end
+end

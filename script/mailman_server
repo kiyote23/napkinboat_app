@@ -1,13 +1,28 @@
 #!/usr/bin/env ruby
+
+ENV["RAILS_ENV"]
+
 require "rubygems"
 require "bundler/setup"
 require "mailman"
+require "figaro"
+
+Mailman.config.pop3 = {
+	server: 'a2s62.a2hosting.com', port: 995, ssl: true,
+	username: ENV["NAPKINBOAT_USERNAME"], 
+	password: ENV["NAPKINBOAT_PASSWORD"]
+}	
 
 Mailman::Application.run do
 	default do
-		# Mail::Message -- check docs on this
-		puts "Received #{message.subject}"
-	   	Message.receive_mail(message)
-		# Message.create! sender_email: message.from.first, content: message.body.decoded
+		begin
+			# Mail::Message -- check docs on this
+			puts "Received #{message.subject}"
+		   	UserMailer.receive(message)
+			# Message.create! sender_email: message.from.first, content: message.body.decoded
+		rescue Exception => e
+			Mailman.logger.error "Exception occurred while receiving message."
+			Mailman.logger.error [e, *e.backtrace].join("\n")
+		end
 	end
 end

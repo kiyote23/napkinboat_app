@@ -28,3 +28,7 @@ database.yml
 appSpecs.txt
 algorithmNotes.txt
 *Notes.txt
+config/environment_variables.yml
+
+# Ignore application configuration
+/config/application.yml

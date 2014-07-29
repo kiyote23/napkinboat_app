@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.8'
+gem 'rails'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
@@ -14,6 +14,7 @@ gem 'mailman', require: false
 gem 'daemons'
 gem 'mail'
 gem 'maildir'
+gem 'figaro', github: 'laserlemon/figaro'
 
 group :development, :test do
 	# Use sqlite3 as the database for Active Record

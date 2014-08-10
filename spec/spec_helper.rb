@@ -1,5 +1,8 @@
 require 'rubygems'
 require 'spork'
+require 'bundler/setup'
+require 'mailman-rails'
+require 'mailman'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -50,7 +53,7 @@ Spork.prefork do
 	  config.order = "random"
   
 	  config.include Capybara::DSL
-	  config.include Mailman::Rails::TestSupport
+	  #include Mailman::Rails::TestSupport
 	end
 end
 

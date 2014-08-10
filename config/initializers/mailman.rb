@@ -1,11 +1,15 @@
 require 'mailman'
 
-Mailman.config.pop3 = {
-	server: 'a2s62.a2hosting.com', port: 995, ssl: true,
-	username: "napkinboat@dorkfarm.net",
-	password: "f00bar1",
-	polling: 60
-}
+Mailman.config.maildir = "app/mailers/maildir"
+Mailman.config.watch_maildir = true
+
+#Mailman.config.pop3 = {
+#	server: 'a2s62.a2hosting.com', port: 995, ssl: true,
+#	username: ENV["NAPKINBOAT_USERNAME"],
+#	password: ENV["NAPKINBOAT_PASSWORD"],
+#	polling: 60
+#}
+
 Mailman.config.ignore_stdin = true
 
 # can't raise the server?

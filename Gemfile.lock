@@ -238,6 +238,7 @@ DEPENDENCIES
   maildir
   mailman
   mailman-rails
+  minitest
   rails
   rspec-rails (= 2.13.1)
   sass-rails (~> 4.0.2)
